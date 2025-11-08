@@ -1,0 +1,159 @@
+:root{
+    --web1-pink: #FA97C2;
+    --web1-blue: #2FA0D5;
+    --web1-green: #73C926;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Changa One', cursive;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 900;
+}
+/*Header*/
+#menu-header a{
+    display: block;
+    padding: 0 1.25rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Changa One', cursive;
+}
+
+#menu-header li.active a{
+    color: var(--web1-blue);
+}
+
+#formSearch input{
+    width: 8rem;
+}
+
+#formSearch i{
+    color: var(--web1-green);
+}
+
+#banner {
+    background-image: url(../images/images/bg-banner.gif);    
+}
+
+#banner > div{
+    background: url(../images/images/logo_bg.png) left top no-repeat, url(../images/images/search_bg.png) right top no-repeat;
+    padding: 5rem 0 3rem 0;
+}
+
+#banner a{
+    background-color: var(--web1-pink);
+    color: white;  
+    font-family: 'Changa One', cursive;
+    font-size: 2rem;
+}
+
+#banner .carousel-item{
+    min-height: 15rem;
+}
+
+#banner .carousel-indicators li{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 1.2rem;
+    border: none;
+    margin: 0 0.25rem;
+    position: relative;
+}
+
+#banner .carousel-indicators li span{
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 0.6rem;
+    border: none;
+    text-align: left;
+    text-indent: -9999px;
+}
+
+#banner .carousel-indicators li.active span{
+    background-color: var(--web1-green);
+}
+
+#banner .carousel-indicators {
+    list-style: none;
+}
+
+.readmore{
+    color: var(--web1-blue);    
+}
+
+#aboutus{
+    background-color: var(--web1-pink);
+}
+
+#formSignUp{
+    border-style: dashed !important;
+    border-color: rgba(0,0,0,0.5) !important;
+}
+
+#news .date{
+    background-color: var(--web1-green);
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 5.5rem;
+    height: 5rem;
+}
+
+#news p{
+    color: rgba(0,0,0,0.5) !important;;
+}
+
+footer{
+    background-image: url(../images/images/bg-footer.gif);
+}
+
+#menu-footer a{
+    color: white;
+    font-weight: bold;
+    font-family: 'Changa One', cursive;
+    display: block;
+    padding: 0 2rem;
+}
+
+#menu-footer a.active{
+    color: var(--web1-pink);
+}
+
+#formLogin button[type='submit']{
+   background-color: var(--web1-blue);
+   color: white;
+}
+
+#banner-small {    
+    background-image: url(../images/images/bg-banner.gif);
+    height: 10px;
+}
+
+#testimonials{
+    background-color: var(--web1-pink);
+}
+
+#testimonials .col {
+    background: url(../images/images/quot.png) left top no-repeat;
+    padding-left: 3rem;
+}
+
+#ourTeam .col {
+    width: 80px;
+}
+
+#gallery p{
+    font-weight: bold;
+}
