@@ -106,9 +106,9 @@ h1 {
 #news .date{
     background-color: var(--web1-green);
     font-weight: bold;
-    font-size: 1.5rem;
     width: 5.5rem;
     height: 5rem;
+    padding: 1.5rem;
 }
 
 #news p{

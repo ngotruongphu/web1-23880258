@@ -27,6 +27,8 @@
 
         <!--css-->
         <link rel="stylesheet" href="css/23880258.css">
+
+        
     </head>
 
     <body>
@@ -35,7 +37,7 @@
                 <nav class="navbar navbar-expand-sm navbar-light">
                     <div class="container">
                         <a class="navbar-brand" href="index.html">
-                            <img src="images/images/logo.png" alt=""></a>
+                            <img src="images/logo.png" alt=""></a>
                         <button
                             class="navbar-toggler d-lg-none"
                             type="button"
@@ -92,148 +94,85 @@
                 </nav>                
             </div>            
         </header>
-        <!--Banner-->
-        <section class="container-fluid" id="banner">
-            <div class="container text-white text-center">
-                <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active" aria-current="true"
-                            aria-label="First slide">
-                            <span>0</span></li>
-                        <li data-bs-target="#carousel-banner" data-bs-slide-to="1" aria-label="Second slide">
-                            <span>1</span>
-                        </li>
-                        <li data-bs-target="#carousel-banner" data-bs-slide-to="2" aria-label="Third slide">
-                            <span>2</span>
-                        </li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <h1>Web Development</h1>
-                            <h1>for everyone</h1>
-                            <a href="gallery.html" class="btn text-bold text-uppercase rounded-4 px-4">see more</a>
-                        </div>
-                        <div class="carousel-item">
-                            <h1>23880258</h1>
-                            <h1>Ngo Truong Phu</h1>
-                        </div>
-                        <div class="carousel-item">
-                            <h1>Lap Trinh Web1</h1>
-                            <h1>DTTX - Hoc Ky 2 - 2025</h1>
-                        </div>
-                    </div>                    
+
+        <div id="contents">
+            <!--Banner-->
+            <section class="container-fluid" id="banner">
+                <div class="container text-white text-center">
+                    <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-bs-target="#carousel-banner" data-bs-slide-to="0" class="active" aria-current="true"
+                                aria-label="First slide">
+                                <span>0</span></li>
+                            <li data-bs-target="#carousel-banner" data-bs-slide-to="1" aria-label="Second slide">
+                                <span>1</span>
+                            </li>
+                            <li data-bs-target="#carousel-banner" data-bs-slide-to="2" aria-label="Third slide">
+                                <span>2</span>
+                            </li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <h1>Web Development</h1>
+                                <h1>for everyone</h1>
+                                <a href="gallery.html" class="btn text-bold text-uppercase rounded-4 px-4">see more</a>
+                            </div>
+                            <div class="carousel-item">
+                                <h1>23880258</h1>
+                                <h1>Ngo Truong Phu</h1>
+                            </div>
+                            <div class="carousel-item">
+                                <h1>Lap Trinh Web1</h1>
+                                <h1>DTTX - Hoc Ky 2 - 2025</h1>
+                            </div>
+                        </div>                    
+                    </div>
+                    
                 </div>
+            </section>
+
+            <!--Product-->
+            <section class="container" id="products">
                 
-            </div>
-        </section>
+            </section>
 
-        <!--Product-->
-        <section class="container">
-            <div class="row text-center py-5">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="images/images/icon-1.png" alt="Coffee" class="img-fluid">
-                    <h4>Coffee</h4>
-                    <p>Coffee energizes the mind, warms the soul, and fuels creativity daily.</p>
-                    <a class="readmore btn btn-link pt-0" href="#">Read more</a>
+            <!--About us-->
+            <section class="container-fluid" id="aboutus">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-lg-9 col-md-8 col-sm-12">
+                            <h1 class="text-white">About Us</h1>
+                            <div class="text-black-50">
+                                <img class="float-start me-3" src="images/icon-about.png" alt="About us">
+                                <p>Exploring the Web1 Project: A Student's Journey in Modern Web Development</p>
+                                <p>Welcome to the Web1 project, a student's exploration into the world of web development.
+                                    This website serves as a hands-on practice platform, showcasing skills in HTML5, CSS3,
+                                    JavaScript, Bootstrap, HandlebarJS, and Web API integration. 
+                                    <a href="about.html" class="btn btn-link readmore my-0 p-0">Read more</a> 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <form action="#" id="formSignUp" class="border border-3 p-3 rounded-4 overflow-auto">
+                                <h3 class="text-center text-white">Newsletter<br />
+                                    Sign Up</h3>
+                                <p class="text-black-50 mb-2">Please, write an e-mail:</p>
+                                <input type="email" name="email_signup" id="email-signup" class="form-control mt-0 mb-2">
+                                <button type="submit"
+                                    class="btn btn-dark text-white float-end text-uppercase rounded-4 px-4">
+                                    <h4 class="my-0">sign up</h4>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="images/images/icon-2.png" alt="Drinks" class="img-fluid">    
-                    <h4>Drinks</h4>
-                    <p>Drinks refresh, rejuvenate, and bring people together in joyful moments.</p> 
-                    <a class="readmore btn btn-link pt-0" href="#">Read more</a>           
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="images/images/icon-3.png" alt="Cakes" class="img-fluid">    
-                    <h4>Cakes</h4>
-                    <p>Cakes sweeten celebrations, delighting taste buds with layers of joy.</p>
-                    <a class="readmore btn btn-link pt-0" href="#">Read more</a>          
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="images/images/icon-4.png" alt="Ice-creams" class="img-fluid">     
-                    <h4>Ice-creams</h4>
-                    <p>Ice creams cool, delight, and bring sweet joy to everyone.</p>  
-                    <a class="readmore btn btn-link pt-0" href="#">Read more</a>          
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!--About us-->
-        <section class="container-fluid" id="aboutus">
-            <div class="container">
-                <div class="row py-5">
-                    <div class="col-lg-9 col-md-8 col-sm-12">
-                        <h1 class="text-white">About Us</h1>
-                        <div class="text-black-50">
-                            <img class="float-start me-3" src="images/images/icon-about.png" alt="About us">
-                            <p>Exploring the Web1 Project: A Student's Journey in Modern Web Development</p>
-                            <p>Welcome to the Web1 project, a student's exploration into the world of web development.
-                                This website serves as a hands-on practice platform, showcasing skills in HTML5, CSS3,
-                                JavaScript, Bootstrap, HandlebarJS, and Web API integration. 
-                                <a href="about.html" class="btn btn-link readmore my-0 p-0">Read more</a> 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12">
-                        <form action="#" id="formSignUp" class="border border-3 p-3 rounded-4 overflow-auto">
-                            <h3 class="text-center text-white">Newsletter<br />
-                                Sign Up</h3>
-                            <p class="text-black-50 mb-2">Please, write an e-mail:</p>
-                            <input type="email" name="email_signup" id="email-signup" class="form-control mt-0 mb-2">
-                            <button type="submit"
-                                class="btn btn-dark text-white float-end text-uppercase rounded-4 px-4">
-                                <h4 class="my-0">sign up</h4>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--news-->
-        <section class="container py-5" id="news">
-            <h1 class="text-black-10">News</h1>
-            <div class="row py-3">
-                <div class="col">
-                    <div class="float-start">
-                        <div class="date text-white text-center rounded-4 py-3">
-                            <h4>Dec. <br/>
-                            25.</h4>
-                        </div>
-                        <a href="" class="btn btn-link readmore">Read more</a>
-                    </div>
-                    <div>
-                        <h3>Coffee Enthusiasts Rejoice</h3>
-                        <p>New Study Reveals Coffee's Surprising Benefits for Mental Health</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="float-start">
-                        <div class="date text-white text-center rounded-4 pt-3">
-                            <h4>Nov. <br/>
-                            22.</h4>
-                        </div>
-                        <a href="" class="btn btn-link readmore">Read more</a>
-                    </div>
-                    <div>
-                        <h3>Culinary Revolution</h3>
-                        <p>AI Chefs Redefine Gourmet Dining with Innovative Dishes</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="float-start">
-                        <div class="date text-white text-center rounded-4 pt-3">
-                            <h4>Oct. <br/>
-                            10.</h4>
-                        </div>
-                        <a href="" class="btn btn-link readmore">Read more</a>
-                    </div>
-                    <div>
-                        <h3>Our Cakes</h3>
-                        <p>Cake Artistry Reaches New Heights with 3D-Printed Edible Masterpieces</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!--news-->
+            <section class="container py-5" id="news">
+                
+            </section>
+        </div>
 
         <!--footer-->
         <footer class="text-center container-fluid text-white py-3">
@@ -329,5 +268,87 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <!--Handlebar-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!--js-->
+        <script src="js/23880258.js"></script>
+
+        <!--template product-->
+        <script id="products-template" type="text/x-handlebars-template">
+            <div class="row text-center py-5">
+                {{#each data}}
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img src="{{imagepath}}" alt="{{name}}" class="img-fluid">
+                    <h4>{{name}}</h4>
+                    <p class="text-black-50">{{summary}}</p>
+                    <a class="readmore btn btn-link pt-0" href="#" 
+                    onclick="loadData('products/{{id}}' , 'details-template', 'contents')"
+                    >Read more</a>
+                </div>
+                {{/each}}
+            </div>
+        </script>      
+
+        <script id="news-template" type="text/x-handlebars-template">
+            <h1 class="text-black-10">News</h1>
+            <div class="row py-3">
+                {{#each data}}
+                <div class="col">
+                    <div class="float-start">
+                        <div class="date text-white text-center rounded-4 py-2">
+                            <h3>{{date}}</h3>
+                        </div>
+                        <a href="#" class="btn btn-link readmore" onclick="loadData('news/{{id}}' , 'details-template', 'contents')">Read more</a>
+                    </div>
+                    <div>
+                        <h3>{{name}}</h3>
+                        <p>{{summary}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+
+        <script id="details-template" type="text/x-handlebars-template">
+            <section class="container-fluid" id="banner-small"></section>
+            {{#each data}}
+            <section class="container py-5">
+                <h1 class="pb-3">{{name}}</h1>
+                <div class="text-black-50">{{{description}}}</div>
+            </section>
+            {{/each}}
+        </script>
+
+        <!--Goi ham loadData vao template product-->
+        <script>
+            loadData('products', 'products-template', 'products')
+            loadData('news', 'news-template', 'news')
+        </script>
+
+        <!--script tu lam-->
+        <script>
+            document.addEventListener("mouseover", function (e) {
+                if (e.target.tagName === "IMG" && e.target.src.includes("-active") === false) {
+                    // Nếu ảnh có trong images/ và chưa phải là ảnh active
+                    let oldSrc = e.target.src;                    
+                    if (oldSrc.includes("images/icon-")) {
+                    e.target.dataset.oldsrc = oldSrc; // lưu src cũ
+                    e.target.src = oldSrc.replace(".png", "-active.png");
+                    let h4 = e.target.closest(".col-lg-3").querySelector("h4");
+                    if (h4) h4.classList.add("active");
+                    }
+                }
+            });
+            document.addEventListener("mouseout", function (e) {
+                if (e.target.tagName === "IMG" && e.target.dataset.oldsrc) {
+                     let h4 = e.target.closest(".col-lg-3").querySelector("h4");
+                    if (h4) h4.classList.remove("active");
+                    e.target.src = e.target.dataset.oldsrc;
+                    delete e.target.dataset.oldsrc;
+                }
+            });
+        </script>
     </body>
 </html>
