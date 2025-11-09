@@ -8,6 +8,7 @@ async function loadData(request, templateId, viewId){
     var context = { data: data};
     var view = document.getElementById(viewId);
     view.innerHTML = template(context);
-    const imgs = view.querySelectorAll('img');
 };
+
+
 

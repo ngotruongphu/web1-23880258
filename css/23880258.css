@@ -161,3 +161,10 @@ footer{
 #gallery p{
     font-weight: bold;
 }
+
+#blogs-categories li{
+    background: url(../images/marker1.png) 0 0.25rem no-repeat;
+    padding: 0 0 0.75rem 1.5rem;
+    list-style-type: none;
+}
+
