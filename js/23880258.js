@@ -10,3 +10,4 @@ async function loadData(request, templateId, viewId){
     view.innerHTML = template(context);
     const imgs = view.querySelectorAll('img');
 };
+

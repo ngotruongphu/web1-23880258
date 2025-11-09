@@ -103,51 +103,11 @@
         <section class="container py-5" id="gallery">
             <h1>Gallery</h1>
             <p class="text-black-50 pt-3 mb-1">Filter by catergory:</p>
-            <ul class="nav" id="galleryNav">
-                <li class="nav-tem">
-                    <a class="nav-link ps-0 disabled" href="#">Show All</a>                    
-                </li>
-                <li class="nav-tem">
-                    <a class="nav-link" href="#">Healthy Drinks</a>                    
-                </li>
-                <li class="nav-tem">
-                    <a class="nav-link" href="#">Dessert Flavors</a>                    
-                </li>
-                <li class="nav-tem">
-                    <a class="nav-link" href="#">CupCake Creations</a>                    
-                </li>
+            <ul class="nav" id="gallery-categories">
+                
             </ul>
             <div class="row" id="galleryRow">
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb1.jpg" alt="Lemon Juice" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb2.jpg" alt="Cheesecake" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb3.jpg" alt="Rainbow Cupcake" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb4.jpg" alt="Chocolate Cupcake And Cream" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb5.jpg" alt="Cupcake" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb6.jpg" alt="Chocolate CupCake" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb7.jpg" alt="Cookies" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb8.jpg" alt="Special Cookies" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb9.jpg" alt="Strawberry Tea" class="img-thumbnail">
-                </div>
-                <div class="col-md-3 p-2">
-                    <img src="images/images/gallery/gallery-thumb10.jpg" alt="Redberry Tea" class="img-thumbnail">
-                </div>
+                
             </div>
 
         </section>
@@ -246,5 +206,50 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <!--Handlebar-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!--js-->
+        <script src="js/23880258.js"></script>
+
+        <!--template categories-->
+        <script id="categories-template" type="text/x-handlebars-template">                
+            <li class="nav-tem">
+                <a class="nav-link ps-0 disabled" href="#"
+                onclick="loadData('gallery', 'gallery-template', 'galleryRow');disableLink(this)"
+                >Show All</a>                    
+            </li>
+            {{#each data}}
+            <li class="nav-tem">
+                <a class="nav-link" href="#"
+                onclick="loadData('gallery/categories/{{id}}', 'gallery-template', 'galleryRow');disableLink(this)"
+                >{{name}}</a>                    
+            </li>
+            {{/each}}
+        </script>
+
+        <!--template gallery-->
+        <script id="gallery-template" type="text/x-handlebars-template">
+            {{#each data}}
+            <div class="col-md-3 p-2">
+                <img src="{{thumbpath}}" alt="{{name}}" class="img-thumbnail">
+            </div>
+            {{/each}}
+        </script>
+
+        <script>
+            loadData('gallery-categories', 'categories-template', 'gallery-categories')
+            loadData('gallery', 'gallery-template', 'galleryRow')
+
+            function disableLink(link){
+                let links = document.querySelectorAll('#gallery-categories a');
+                for (let i = 0; i < links.length; i++) {
+                    links[i].classList.remove('disabled');                    
+                }
+                link.classList.add('disabled');
+            }
+        </script>
+
     </body>
 </html>

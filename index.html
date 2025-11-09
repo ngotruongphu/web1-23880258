@@ -280,7 +280,7 @@
             <div class="row text-center py-5">
                 {{#each data}}
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="{{imagepath}}" alt="{{name}}" class="img-fluid">
+                    <img src="{{imagepath}}" alt="{{name}}" class="img-fluid" onmouseover="setActiveImage(this,'{{imagepath}}')" onmouseout="setActiveImage(this,'{{imagepath}}',false)">
                     <h4>{{name}}</h4>
                     <p class="text-black-50">{{summary}}</p>
                     <a class="readmore btn btn-link pt-0" href="#" 
@@ -291,6 +291,7 @@
             </div>
         </script>      
 
+        <!--template news-->
         <script id="news-template" type="text/x-handlebars-template">
             <h1 class="text-black-10">News</h1>
             <div class="row py-3">
@@ -311,6 +312,7 @@
             </div>
         </script>
 
+        <!--template details-->
         <script id="details-template" type="text/x-handlebars-template">
             <section class="container-fluid" id="banner-small"></section>
             {{#each data}}
@@ -325,30 +327,20 @@
         <script>
             loadData('products', 'products-template', 'products')
             loadData('news', 'news-template', 'news')
+
+            function setActiveImage(img,imagepath,isActice = true){
+                if(isActice){
+                    img.src = imagepath.replace('.png','-active.png')
+                }
+                else {
+                    img.src = imagepath
+                }  
+                img.nextElementSibling.classList.toggle('web1-text-blue');              
+            }
+
         </script>
 
         <!--script tu lam-->
-        <script>
-            document.addEventListener("mouseover", function (e) {
-                if (e.target.tagName === "IMG" && e.target.src.includes("-active") === false) {
-                    // Nếu ảnh có trong images/ và chưa phải là ảnh active
-                    let oldSrc = e.target.src;                    
-                    if (oldSrc.includes("images/icon-")) {
-                    e.target.dataset.oldsrc = oldSrc; // lưu src cũ
-                    e.target.src = oldSrc.replace(".png", "-active.png");
-                    let h4 = e.target.closest(".col-lg-3").querySelector("h4");
-                    if (h4) h4.classList.add("active");
-                    }
-                }
-            });
-            document.addEventListener("mouseout", function (e) {
-                if (e.target.tagName === "IMG" && e.target.dataset.oldsrc) {
-                     let h4 = e.target.closest(".col-lg-3").querySelector("h4");
-                    if (h4) h4.classList.remove("active");
-                    e.target.src = e.target.dataset.oldsrc;
-                    delete e.target.dataset.oldsrc;
-                }
-            });
-        </script>
+        
     </body>
 </html>

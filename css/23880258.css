@@ -4,6 +4,10 @@
     --web1-green: #73C926;
 }
 
+.web1-text-blue{
+    color: var(--web1-blue);
+}
+
 body {
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
     font-size: 16px;
