@@ -8,6 +8,10 @@
     color: var(--web1-blue);
 }
 
+.web1-bg-blue{
+    background-color: var(--web1-blue) !important;
+}
+
 body {
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -168,3 +172,7 @@ footer{
     list-style-type: none;
 }
 
+#map{
+    height: 400px;
+    width: 100%;
+}
