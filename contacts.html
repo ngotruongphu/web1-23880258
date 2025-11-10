@@ -150,7 +150,8 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email *</label>
-                                <input type="email" class="form-control form-control-sm" name="email" id="email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <input type="email" class="form-control form-control-sm" name="email" id="email" required="" pattern="[a-z0-9._%+\\-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+>
                             </div>
                         </div>
                         <div class="col">
@@ -277,7 +278,7 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-
+        <script src="js/23880258.js"></script>
         <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
         <script src="js/map.js"></script>
         <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdD8wcsAAAAAGjJ8u41iWq0ZBL0DJHHXUpphz9T"></script>
@@ -305,11 +306,43 @@
                     });
                 })
             }
-            function sendMail(){
-                let responseMessage = document.getElementById('responseMessage')
-                responseMessage.innerHTML = 'OK'
-                responseMessage.classList.remove();
-                responseMessage.classList.toggle('text-info');
+            async function sendMail(){
+                let responseMessage = document.getElementById('responseMessage');                
+                
+                try{
+                    let token = await getAuthenticateToken('test','1c3cr3@m');
+                    let postData ={
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value,
+                        copy: document.getElementById('copy').value,
+                    }
+                    let response = await fetch(`${AUTHENTICATE_API}/send`,{
+                        method: 'POST',
+                        headers: {
+                            'Content-Type' : 'application/json',
+                            'Accept' : 'application/json'
+                        },
+                        body: JSON.stringify(postData)
+                    });
+                    let result = await response.json()
+                    if (response.status ==200){
+                        responseMessage.innerHTML = result.message;
+                        responseMessage.classList.remove();
+                        responseMessage.classList.toggle('text-success');
+                    } else{
+                        throw new Error(result.message);
+                    }
+                }
+                catch (error){
+                    responseMessage.innerHTML = error
+                    responseMessage.classList.remove();
+                    responseMessage.classList.toggle('text-danger');
+
+                }
+
+               
             }
         </script>
         
