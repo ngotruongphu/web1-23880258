@@ -150,7 +150,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email *</label>
-                                <input type="email" class="form-control form-control-sm" name="email" id="email" required="" pattern="[a-z0-9._%+\\-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+                                <input type="email" class="form-control form-control-sm" name="email" id="email" required="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
 >
                             </div>
                         </div>
@@ -323,7 +323,7 @@
                         headers: {
                             'Content-Type' : 'application/json',
                             'Accept' : 'application/json',
-                            'Authorization' : 'Bearer' + token
+                            'Authorization' : 'Bearer ' + token
                         },
                         body: JSON.stringify(postData)
                     });
