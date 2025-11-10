@@ -106,8 +106,8 @@
 
         <!--Contact-->
         <section class="container py-3">
-            <div class="row" bis_skin_checked="1">
-                <div class="col" bis_skin_checked="1">
+            <div class="row" >
+                <div class="col" >
                     <h1>Address:</h1>
                     <p class="pt-3 text-black-50">
                         227 Nguyen Van Cu Street<br>
@@ -115,14 +115,14 @@
                         Hochiminh City, Vietnam
                     </p>
                 </div>
-                <div class="col" bis_skin_checked="1">
+                <div class="col" >
                     <h1>Phones:</h1>
                     <p class="pt-3 text-black-50">
                         (028) 62884499<br>
                         (028) 73089899<br>
                     </p>
                 </div>
-                <div class="col" bis_skin_checked="1">
+                <div class="col" >
                     <h1>Email:</h1>
                     <p class="pt-3 text-black-50">
                         info@hcmus.edu.vn<br>
@@ -134,53 +134,52 @@
         <!--Misc information-->
         <section class="container py-3">
             <h1>Miscellaneous information:</h1>
-            <div class="text-black-50 pt-3" bis_skin_checked="1">
+            <div class="text-black-50 pt-3">
                 <p>For any comments, suggestions, or questions, please use our Contact Us form to get in touch. We value
                     your input and are here to help with any concerns you may have.</p>
                 <p><i>Send an email. All fields with an * are required.</i></p>
 
                 <form action="#" method="post" onsubmit="onSubmit(event)" id="form-sendMail">
-                    <div class="row" bis_skin_checked="1">
-                        <div class="col" bis_skin_checked="1">
-                            <div class="mb-3" bis_skin_checked="1">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
                                 <label for="name" class="form-label">Name *</label>
                                 <input type="text" class="form-control form-control-sm" name="name" id="name" required="">
                             </div>
                         </div>
-                        <div class="col" bis_skin_checked="1">
-                            <div class="mb-3" bis_skin_checked="1">
+                        <div class="col">
+                            <div class="mb-3">
                                 <label for="email" class="form-label">Email *</label>
                                 <input type="email" class="form-control form-control-sm" name="email" id="email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                             </div>
                         </div>
-                        <div class="col" bis_skin_checked="1">
-                            <div class="mb-3" bis_skin_checked="1">
+                        <div class="col">
+                            <div class="mb-3">
                                 <label for="subject" class="form-label">Subject *</label>
                                 <input type="text" class="form-control form-control-sm" name="subject" id="subject" required="">
                             </div>
                         </div>
                     </div>
-                    <div class="row" bis_skin_checked="1">
-                        <div class="col" bis_skin_checked="1">
-                            <div class="mb-3" bis_skin_checked="1">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
                                 <label for="name" class="form-label">Message *</label>
                                 <textarea class="form-control" name="message" id="message" rows="3" required=""></textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="row" bis_skin_checked="1">
-                        <div class="col" bis_skin_checked="1">
-                            <span id="response"></span>
+                    <div class="row">
+                        <div class="col">
+                            <div id="responseMessage" class="text-info"></div>
                         </div>
-                        <div class="col text-end" bis_skin_checked="1">
-                            <div class="form-check form-check-inline" bis_skin_checked="1">
+                        <div class="col text-end">
+                            <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="copy">Send a copy to yourself</label>
                                 <input type="checkbox" name="copy" id="copy" value="1">
                             </div>
                             <button class="btn btn-sm text-white web1-bg-blue">Send email to us</button>
                         </div>
-                    </div>
-                    <div id="responseMessage" class="text-danger text-center"></div>
+                    </div>                    
                 </form>
             </div>
         </section>
@@ -298,13 +297,19 @@
                         if(response.status == 200){
                             sendMail();
                         } else{
-                            document.getElementById('responseMessage').innerHTML = 'Error: Can not verify RECAPTCHA'
+                            let responseMessage = document.getElementById('responseMessage')
+                            responseMessage.innerHTML = 'Error: Can not verify RECAPTCHA'
+                            responseMessage.classList.remove();
+                            responseMessage.classList.toggle('text-danger');
                         }
                     });
                 })
             }
             function sendMail(){
-                document.getElementById('responseMessage').innerHTML = 'OK'
+                let responseMessage = document.getElementById('responseMessage')
+                responseMessage.innerHTML = 'OK'
+                responseMessage.classList.remove();
+                responseMessage.classList.toggle('text-info');
             }
         </script>
         
