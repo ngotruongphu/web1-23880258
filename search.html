@@ -45,7 +45,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="gallery.html">Gallery</a>
                             </li>
                             <li class="nav-item">
@@ -76,16 +76,8 @@
     <section id="banner-small"></section>
 
     <!--Gallery-->
-    <section class="container py-5" id="gallery">
-        <h1>Gallery</h1>
-        <p class="text-black-50 pt-3 mb-1">Filter by catergory:</p>
-        <ul class="nav" id="gallery-categories">
-
-        </ul>
-        <div class="row" id="galleryRow">
-
-        </div>
-
+    <section class="container py-5" id="content">
+        
     </section>
 
     <!--footer-->
@@ -98,7 +90,7 @@
                 <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="gallery.html">Gallery</a>
+                <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="blogs.html">Blogs</a>
@@ -161,43 +153,37 @@
     <!--js-->
     <script src="js/23880258.js"></script>
 
-    <!--template categories-->
-    <script id="categories-template" type="text/x-handlebars-template">
-            <li class="nav-tem">
-                <a class="nav-link ps-0 disabled" href="#"
-                onclick="loadData('gallery', 'gallery-template', 'galleryRow');disableLink(this)"
-                >Show All</a>                    
-            </li>
-            {{#each data}}
-            <li class="nav-tem">
-                <a class="nav-link" href="#"
-                onclick="loadData('gallery/categories/{{id}}', 'gallery-template', 'galleryRow');disableLink(this)"
-                >{{name}}</a>                    
-            </li>
-            {{/each}}
-        </script>
+    <script id="search-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <a class="text-decoration-none" href="#" onclick="loadData('{{type}}/{{id}}','details-template','content')">
+            <h1 class="py-3 text-black">{{name}}</h1>
+        </a>        
+        <div class="text-black-50">{{summary}}</div>
+        {{/each}}
+    </script>
 
-    <!--template gallery-->
-    <script id="gallery-template" type="text/x-handlebars-template">
-            {{#each data}}
-            <div class="col-md-3 p-2">
-                <img src="{{thumbpath}}" alt="{{name}}" class="img-thumbnail">
-            </div>
-            {{/each}}
-        </script>
-
+    <script id="details-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <h1 class="py-3">{{name}}</h1>
+        {{#if imagepath}}
+        <img src="{{imagepath}}" alt="name" class="float-start me-3">
+        {{/if}}
+        <div class="text-black-50">{{{description}}}</div>
+        {{/each}}
+    </script>
+  
     <script>
         checkLogin();
-        loadData('gallery-categories', 'categories-template', 'gallery-categories')
-        loadData('gallery', 'gallery-template', 'galleryRow')
 
-        function disableLink(link) {
-            let links = document.querySelectorAll('#gallery-categories a');
-            for (let i = 0; i < links.length; i++) {
-                links[i].classList.remove('disabled');
+        let searchParams = new URLSearchParams(location.search);
+        let keyword = searchParams.get('keyword');
+        if(keyword){
+            keyword = keyword.trim();
+            if(keyword !=''){
+                loadData(`search?keyword=${keyword}`,'search-template','content');
             }
-            link.classList.add('disabled');
         }
+
     </script>
 
 </body>
